@@ -1,0 +1,33 @@
+﻿name: Sample Script 2
+dataset:
+  file: sample2.dataset.txt
+  type: plain
+steps:
+  - name: Open Google
+    action: go
+    gotoid: 0
+    where: 'https://google.com'
+
+  - name: Input Search
+    action: setval
+    where: input[name=q]
+    what: "%%dataset:0%%"
+
+  - name: Click Search
+    action: click
+    where: input[type=submit]
+
+  - name: Sleep
+    action: sleep
+    time: 2
+
+  - name: Log First Item
+    action: logeval
+    what: document.querySelector('h3').innerText;
+  
+  - name: Shift
+    action: shift
+
+  - name: Goto search top
+    action: goto
+    id: 0
