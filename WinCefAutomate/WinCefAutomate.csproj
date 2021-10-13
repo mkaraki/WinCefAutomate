@@ -138,7 +138,6 @@
     <None Include="scripts\sample2.yaml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="scripts\script-docs.ja.md" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
