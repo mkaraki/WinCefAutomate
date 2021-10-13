@@ -1,3 +1,4 @@
 # WinCefAutomate
 
-- [ja](Japanese)
+## Documents
+- [Japanese](ja)
