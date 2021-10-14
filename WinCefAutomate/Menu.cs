@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.IO;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
+using CefSharp.WinForms;
+using CefSharp;
 
 namespace WinCefAutomate
 {
@@ -24,6 +26,12 @@ namespace WinCefAutomate
 
         private void Menu_Shown(object sender, EventArgs e)
         {
+            CefSettings settings = new CefSettings
+            {
+                CachePath = Environment.CurrentDirectory + @"\CEF"
+            };
+            Cef.Initialize(settings);
+
             var deserializer = new DeserializerBuilder()
                 .WithNamingConvention(UnderscoredNamingConvention.Instance)
                 .Build();

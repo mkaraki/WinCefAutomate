@@ -22,11 +22,7 @@ namespace WinCefAutomate
         {
             InitializeComponent();
 
-            CefSettings settings = new CefSettings
-            {
-                CachePath = Environment.CurrentDirectory + @"\CEF"
-            };
-            Cef.Initialize(settings);
+            
 
             cef = new ChromiumWebBrowser("about:blank");
             splitContainer1.Panel2.Controls.Add(cef);
