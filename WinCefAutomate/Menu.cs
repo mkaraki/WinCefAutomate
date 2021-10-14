@@ -62,6 +62,9 @@ namespace WinCefAutomate
                 Dataset = loadscr.Processor.Dataset,
             };
             awind.ShowDialog();
+
+            loadscr.Dispose();
+            awind.Dispose();
         }
     }
 }

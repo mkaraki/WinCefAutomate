@@ -33,7 +33,7 @@ namespace WinCefAutomate
             {
                 pbar_status.Value = i + 1;
 
-                lbl_status.Text = $"Processing Scripts: line {i + 1}";
+                lbl_status.Text = $"Processing Scripts: step {i + 1}";
                 await Task.Run(() => {
                     try
                     {
@@ -41,7 +41,7 @@ namespace WinCefAutomate
                     }
                     catch (ScriptException ex)
                     { 
-                        MessageBox.Show($"Error on Script: {ex.Message}{Environment.NewLine}{Environment.NewLine}Aborted.");
+                        MessageBox.Show($"Error on Script step {i + 1}: {ex.Message}{Environment.NewLine}{Environment.NewLine}Aborted.");
                         if (InvokeRequired)
                             Invoke((Action)delegate { Close(); });
                     }
