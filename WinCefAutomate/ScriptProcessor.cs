@@ -73,13 +73,13 @@ namespace WinCefAutomate
 
         public async Task ReadDatasetAsync()
         {
-            script.Dataset.File = "scripts/" + script.Dataset.File;
+            string file = "scripts/" + script.Dataset.File;
 
-            if (script.Dataset.File != null && System.IO.File.Exists(script.Dataset.File))
+            if (file != null && System.IO.File.Exists(file))
             {
                 if (script.Dataset.Type == "plain")
                 {
-                    string[] d = await Task.Run (() => System.IO.File.ReadAllLines(script.Dataset.File));
+                    string[] d = await Task.Run (() => System.IO.File.ReadAllLines(file));
                     Dataset = new string[d.Length, 1];
                     for (int i = 0; i < d.Length; i++)
                     {
